@@ -5,7 +5,7 @@ import java.time.LocalTime;
 
 public class AccidentesLeganes {
 
-    private int num_Expediente;
+    private String num_Expediente;
     private String localizacion;
     private String distrito;
     private boolean positivaDrogas;
@@ -14,11 +14,12 @@ public class AccidentesLeganes {
     private LocalTime hora;
     private String estadoMeterologico;
     private LocalDate fecha;
+    private String tipoVehiculo;
 
     public AccidentesLeganes() {
     }
 
-    public AccidentesLeganes(int num_Expediente, String localizacion, String distrito, boolean positivaDrogas, boolean positivaAlcohol, String sexo, LocalTime hora, String estadoMeterologico, LocalDate fecha) {
+    public AccidentesLeganes(String num_Expediente, String localizacion, String distrito, boolean positivaDrogas, boolean positivaAlcohol, String sexo, LocalTime hora, String estadoMeterologico, LocalDate fecha, String tipoVehiculo) {
         this.num_Expediente = num_Expediente;
         this.localizacion = localizacion;
         this.distrito = distrito;
@@ -28,13 +29,22 @@ public class AccidentesLeganes {
         this.hora = hora;
         this.estadoMeterologico = estadoMeterologico;
         this.fecha = fecha;
+        this.tipoVehiculo = tipoVehiculo;
     }
 
-    public int getNum_Expediente() {
+    public String getTipoVehiculo() {
+        return tipoVehiculo;
+    }
+
+    public void setTipoVehiculo(String tipoVehiculo) {
+        this.tipoVehiculo = tipoVehiculo;
+    }
+
+    public String getNum_Expediente() {
         return num_Expediente;
     }
 
-    public void setNum_Expediente(int num_Expediente) {
+    public void setNum_Expediente(String num_Expediente) {
         this.num_Expediente = num_Expediente;
     }
 
@@ -100,5 +110,21 @@ public class AccidentesLeganes {
 
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
+    }
+
+    @Override
+    public String toString() {
+        return "AccidentesLeganes{" +
+                "num_Expediente='" + num_Expediente + '\'' +
+                ", localizacion='" + localizacion + '\'' +
+                ", distrito='" + distrito + '\'' +
+                ", positivaDrogas=" + positivaDrogas +
+                ", positivaAlcohol=" + positivaAlcohol +
+                ", sexo='" + sexo + '\'' +
+                ", hora=" + hora +
+                ", estadoMeterologico='" + estadoMeterologico + '\'' +
+                ", fecha=" + fecha +
+                ", tipoVehiculo='" + tipoVehiculo + '\'' +
+                '}';
     }
 }
