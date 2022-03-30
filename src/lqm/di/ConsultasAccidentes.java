@@ -2,11 +2,15 @@ package lqm.di;
 
 import utils.ListarCSV;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
 public class ConsultasAccidentes {
-    List<AccidentesLeganes> accidentesLega;
+
+    List<AccidentesLeganes> accidentesLega = new ArrayList<>();
+
+
 
     public ConsultasAccidentes(){
         try{
@@ -25,7 +29,10 @@ public class ConsultasAccidentes {
         System.out.println("LISTAMOS TODOS LOS ACCIDENTES");
 
         Stream<AccidentesLeganes> acci= accidentesLega.stream();
-        acci.forEach(accidentesLega -> System.out.println(accidentesLega));
+         acci.forEach(accidentesLega -> System.out.println(accidentesLega));
+
+        System.out.println(accidentesLega.stream().findFirst());
+        //accidentesLega.stream().limit(5).filter(a -> a.getDistrito()=="Leganes").forEach(System.out::println);
         System.out.println("");
     }
 }

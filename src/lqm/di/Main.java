@@ -8,8 +8,5 @@ public class Main {
 
         ConsultasAccidentes ca= new ConsultasAccidentes();
 
-
-
-
     }
 }
