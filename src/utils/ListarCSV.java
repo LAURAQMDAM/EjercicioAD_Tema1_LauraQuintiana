@@ -1,7 +1,6 @@
 package utils;
 
 import lqm.di.AccidentesLeganes;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -9,7 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
-import java.time.LocalTime;
+//import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +21,7 @@ public class ListarCSV {
         String WORKING_DIRECTORY = System.getProperty("user.dir");
         Path path = Paths.get(WORKING_DIRECTORY + File.separator + "data" + File.separator + DATA_FILE);
         final List<String> lines = Files.readAllLines(Paths.get("data/01-EjercicioAD.csv"), StandardCharsets.UTF_8);
+        // lines.forEach(System.out::println);
         List<AccidentesLeganes> accidentes = new ArrayList<>();
         for (int i = 1; i < lines.size(); i++) {
            /* System.out.println("Proceso la linea: " + (i-1));*/
@@ -34,8 +34,9 @@ public class ListarCSV {
             accidente.setLocalizacion(tokenizer.nextToken());
             tokenizer.nextToken(); //saltamos la columna quantityPerUnit->columna numero
             tokenizer.nextToken(); //saltamos la columna quantityPerUnit->columna cod_distrito
+            accidente.setDistrito(tokenizer.nextToken());
             tokenizer.nextToken(); //saltamos la columna quantityPerUnit->columna tipo_acccidente
-            tokenizer.nextToken(); //saltamos la columna quantityPerUnit->columna tipo_acccidente si no pongo este me dice qeu voy por estadometerologi
+           // tokenizer.nextToken(); //saltamos la columna quantityPerUnit->columna tipo_acccidente si no pongo este me dice qeu voy por estadometerologi
             accidente.setEstadoMeterologico(tokenizer.nextToken());
             accidente.setTipoVehiculo(tokenizer.nextToken());
             tokenizer.nextToken(); //saltamos la columna quantityPerUnit->columna tipo_persona
@@ -48,10 +49,8 @@ public class ListarCSV {
             accidente.setPositivaAlcohol(Boolean.parseBoolean(tokenizer.nextToken()));
             accidente.setPositivaDrogas(Boolean.parseBoolean(tokenizer.nextToken()));
 
-         //   System.out.println(accidentes.toString());
             accidentes.add(accidente);
         }
-         //accidentes.forEach(System.out::println);
+
         return accidentes;
-    }
-}
+    }}

@@ -19,7 +19,7 @@ public class AccidentesLeganes {
     public AccidentesLeganes() {
     }
 
-    public AccidentesLeganes(String num_Expediente, String localizacion, String distrito, boolean positivaDrogas, boolean positivaAlcohol, String sexo, LocalTime hora, String estadoMeterologico, LocalDate fecha, String tipoVehiculo) {
+    public AccidentesLeganes(String num_Expediente, LocalDate fecha,LocalTime hora, String localizacion, String distrito,String sexo,  String estadoMeterologico, String tipoVehiculo, boolean positivaDrogas, boolean positivaAlcohol) {
         this.num_Expediente = num_Expediente;
         this.localizacion = localizacion;
         this.distrito = distrito;
@@ -126,5 +126,39 @@ public class AccidentesLeganes {
                 ", fecha=" + fecha +
                 ", tipoVehiculo='" + tipoVehiculo + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof AccidentesLeganes)) return false;
+
+        AccidentesLeganes that = (AccidentesLeganes) o;
+
+        if (positivaDrogas != that.positivaDrogas) return false;
+        if (positivaAlcohol != that.positivaAlcohol) return false;
+        if (!num_Expediente.equals(that.num_Expediente)) return false;
+        if (!localizacion.equals(that.localizacion)) return false;
+        if (!distrito.equals(that.distrito)) return false;
+        if (!sexo.equals(that.sexo)) return false;
+        if (!hora.equals(that.hora)) return false;
+        if (!estadoMeterologico.equals(that.estadoMeterologico)) return false;
+        if (!fecha.equals(that.fecha)) return false;
+        return tipoVehiculo.equals(that.tipoVehiculo);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = num_Expediente.hashCode();
+        result = 31 * result + localizacion.hashCode();
+        result = 31 * result + distrito.hashCode();
+        result = 31 * result + (positivaDrogas ? 1 : 0);
+        result = 31 * result + (positivaAlcohol ? 1 : 0);
+        result = 31 * result + sexo.hashCode();
+        result = 31 * result + hora.hashCode();
+        result = 31 * result + estadoMeterologico.hashCode();
+        result = 31 * result + fecha.hashCode();
+        result = 31 * result + tipoVehiculo.hashCode();
+        return result;
     }
 }
