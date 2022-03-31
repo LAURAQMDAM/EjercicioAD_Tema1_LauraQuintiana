@@ -20,5 +20,13 @@ public class App {
 /*        System.out.println("LISTAMOS TODOS LOS ACCIDENTES");
 
         System.out.println(accidentes.toString());*/
+
+
+
+
+        int numero = 6;
+        String ejemploMario = (numero==6) ? "hola" : "adios";
+
+        System.out.println(ejemploMario);
     }
 }

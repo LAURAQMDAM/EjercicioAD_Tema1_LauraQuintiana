@@ -17,10 +17,10 @@ public class AccidentesLeganes {
     private String sexo;
     private String codLexividad;
     private String lexividad;
-    private double coordenadaX;
+    private String coordenadaX;
     private double coordenadaY;
-    private boolean positivaDrogas;
-    private boolean positivaAlcohol;
+    private String positivaDrogas;
+    private String positivaAlcohol;
 
     public AccidentesLeganes() {
     }
@@ -42,14 +42,17 @@ public class AccidentesLeganes {
         this.sexo= campos[12];
         this.codLexividad= campos[13];
         this.lexividad= campos[14];
-        this.coordenadaX= Double.parseDouble(campos[15]);
-        this.coordenadaY= Double.parseDouble(campos[16]);
-        this.positivaAlcohol= Boolean.parseBoolean(campos[17]);
-        this.positivaDrogas= Boolean.parseBoolean(campos[18]);
+        this.coordenadaX= campos[15];
+        this.coordenadaY = Double.parseDouble(campos[16]);
+      /*  this.positivaDrogas= campos[17];
+        this.positivaAlcohol= Boolean.parseBoolean(campos[18]);*/
+/*
+        this.positivaDrogas =campos[17].equals("V") ? true : false);
+        this.positivaAlcohol=(campos[18].equals("V") ? true : false);*/
 
     }
 
-    public AccidentesLeganes(String numExpediente, String fecha, String hora, String localizacion, String numero, String codDistrito, String distrito, String tipoAccidente, String estadoMetereologico, String tipoVehiculo, String tipoPersona, String rangoEdad, String sexo, String codLexividad, String lexividad, double coordenadaX, double coordenadaY, boolean positivaDrogas, boolean positivaAlcohol) {
+    public AccidentesLeganes(String numExpediente, String fecha, String hora, String localizacion, String numero, String codDistrito, String distrito, String tipoAccidente, String estadoMetereologico, String tipoVehiculo, String tipoPersona, String rangoEdad, String sexo, String codLexividad, String lexividad, String coordenadaX, double coordenadaY, String positivaDrogas, String positivaAlcohol) {
         this.numExpediente = numExpediente;
         this.fecha = fecha;
         this.hora = hora;
@@ -191,11 +194,11 @@ public class AccidentesLeganes {
         this.lexividad = lexividad;
     }
 
-    public double getCoordenadaX() {
+    public String getCoordenadaX() {
         return coordenadaX;
     }
 
-    public void setCoordenadaX(double coordenadaX) {
+    public void setCoordenadaX(String coordenadaX) {
         this.coordenadaX = coordenadaX;
     }
 
@@ -207,19 +210,19 @@ public class AccidentesLeganes {
         this.coordenadaY = coordenadaY;
     }
 
-    public boolean isPositivaDrogas() {
+    public String getPositivaDrogas() {
         return positivaDrogas;
     }
 
-    public void setPositivaDrogas(boolean positivaDrogas) {
+    public void setPositivaDrogas(String positivaDrogas) {
         this.positivaDrogas = positivaDrogas;
     }
 
-    public boolean isPositivaAlcohol() {
+    public String isPositivaAlcohol() {
         return positivaAlcohol;
     }
 
-    public void setPositivaAlcohol(boolean positivaAlcohol) {
+    public void setPositivaAlcohol(String positivaAlcohol) {
         this.positivaAlcohol = positivaAlcohol;
     }
 
