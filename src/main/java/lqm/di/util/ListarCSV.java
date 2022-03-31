@@ -20,10 +20,8 @@ public class ListarCSV {
         String WORKING_DIRECTORY = System.getProperty("user.dir");
         Path path = Paths.get(WORKING_DIRECTORY + File.separator + "data" + File.separator + DATA_FILE);
         final List<String> lines = Files.readAllLines(Paths.get("data/accidentesmadrid.csv"), StandardCharsets.UTF_8);
-        // lines.forEach(System.out::println);
         List<AccidentesLeganes> accidentes = new ArrayList<>();
         for (int i = 1; i < lines.size(); i++) {
-            /* System.out.println("Proceso la linea: " + (i-1));*/
             StringTokenizer tokenizer = new StringTokenizer(lines.get(i), ";");
             AccidentesLeganes accidente = new AccidentesLeganes();
             accidente.setNumExpediente(tokenizer.nextToken());
@@ -43,16 +41,13 @@ public class ListarCSV {
             accidente.setCodLexividad(tokenizer.nextToken());
             accidente.setLexividad(tokenizer.nextToken());
             accidente.setCoordenadaX(tokenizer.nextToken());
-         /*   accidente.setCoordenadaY(Double.parseDouble(tokenizer.nextToken()));*/
-
-           // accidente.setPositivaAlcohol( tokenizer.nextToken());
-          /*  accidente.setPositivaAlcohol(tokenizer.nextToken().equals("N") ? false : false);
-            accidente.setPositivaDrogas(tokenizer.nextToken().equals("Y") ? true : false);*/
-          /*  accidente.setPositivaAlcohol(Boolean.parseBoolean(String.valueOf(String.valueOf(tokenizer.nextToken()).equals("N") ? true : false)));
-            accidente.setPositivaDrogas(Boolean.parseBoolean(String.valueOf(String.valueOf(tokenizer.nextToken().equals("N") ? true : false))));*/
-           // accidente.setPositivaAlcohol(tokenizer.nextToken());
-          //  accidente.setPositivaDrogas(tokenizer.nextToken());
-
+       //     accidente.setCoordenadaY(tokenizer.nextToken());
+           // accidente.setCoordenadaY(tokenizer.nextToken().replace(",","."));
+         //   accidente.setPositivaAlcohol( tokenizer.nextToken());
+          //  accidente.setPositivaAlcohol(String.valueOf(tokenizer.nextToken().equals("N") ? false : true));
+          //  accidente.setPositivaDrogas(String.valueOf(tokenizer.nextToken().equals("Y") ? true : false));
+         //accidente.setPositivaAlcohol(tokenizer.nextToken());
+         //accidente.setPositivaDrogas(tokenizer.nextToken());
 
             accidentes.add(accidente);
         }

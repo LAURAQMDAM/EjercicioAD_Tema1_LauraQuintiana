@@ -1,5 +1,7 @@
 package lqm.di.model;
 
+import java.util.Objects;
+
 public class AccidentesLeganes {
 
     private String numExpediente;
@@ -18,7 +20,7 @@ public class AccidentesLeganes {
     private String codLexividad;
     private String lexividad;
     private String coordenadaX;
-    private double coordenadaY;
+    private String coordenadaY;
     private String positivaDrogas;
     private String positivaAlcohol;
 
@@ -43,7 +45,7 @@ public class AccidentesLeganes {
         this.codLexividad= campos[13];
         this.lexividad= campos[14];
         this.coordenadaX= campos[15];
-        this.coordenadaY = Double.parseDouble(campos[16]);
+        this.coordenadaY = campos[16];
       /*  this.positivaDrogas= campos[17];
         this.positivaAlcohol= Boolean.parseBoolean(campos[18]);*/
 /*
@@ -52,7 +54,7 @@ public class AccidentesLeganes {
 
     }
 
-    public AccidentesLeganes(String numExpediente, String fecha, String hora, String localizacion, String numero, String codDistrito, String distrito, String tipoAccidente, String estadoMetereologico, String tipoVehiculo, String tipoPersona, String rangoEdad, String sexo, String codLexividad, String lexividad, String coordenadaX, double coordenadaY, String positivaDrogas, String positivaAlcohol) {
+    public AccidentesLeganes(String numExpediente, String fecha, String hora, String localizacion, String numero, String codDistrito, String distrito, String tipoAccidente, String estadoMetereologico, String tipoVehiculo, String tipoPersona, String rangoEdad, String sexo, String codLexividad, String lexividad, String coordenadaX, String coordenadaY, String positivaDrogas, String positivaAlcohol) {
         this.numExpediente = numExpediente;
         this.fecha = fecha;
         this.hora = hora;
@@ -202,11 +204,11 @@ public class AccidentesLeganes {
         this.coordenadaX = coordenadaX;
     }
 
-    public double getCoordenadaY() {
+    public String getCoordenadaY() {
         return coordenadaY;
     }
 
-    public void setCoordenadaY(double coordenadaY) {
+    public void setCoordenadaY(String coordenadaY) {
         this.coordenadaY = coordenadaY;
     }
 
@@ -249,5 +251,18 @@ public class AccidentesLeganes {
                 ", positivaDrogas=" + positivaDrogas +
                 ", positivaAlcohol=" + positivaAlcohol +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AccidentesLeganes that = (AccidentesLeganes) o;
+        return Objects.equals(numExpediente, that.numExpediente) && Objects.equals(fecha, that.fecha) && Objects.equals(hora, that.hora) && Objects.equals(localizacion, that.localizacion) && Objects.equals(numero, that.numero) && Objects.equals(codDistrito, that.codDistrito) && Objects.equals(distrito, that.distrito) && Objects.equals(tipoAccidente, that.tipoAccidente) && Objects.equals(estadoMetereologico, that.estadoMetereologico) && Objects.equals(tipoVehiculo, that.tipoVehiculo) && Objects.equals(tipoPersona, that.tipoPersona) && Objects.equals(rangoEdad, that.rangoEdad) && Objects.equals(sexo, that.sexo) && Objects.equals(codLexividad, that.codLexividad) && Objects.equals(lexividad, that.lexividad) && Objects.equals(coordenadaX, that.coordenadaX) && Objects.equals(coordenadaY, that.coordenadaY) && Objects.equals(positivaDrogas, that.positivaDrogas) && Objects.equals(positivaAlcohol, that.positivaAlcohol);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(numExpediente, fecha, hora, localizacion, numero, codDistrito, distrito, tipoAccidente, estadoMetereologico, tipoVehiculo, tipoPersona, rangoEdad, sexo, codLexividad, lexividad, coordenadaX, coordenadaY, positivaDrogas, positivaAlcohol);
     }
 }
