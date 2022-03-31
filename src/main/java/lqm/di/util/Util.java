@@ -1,4 +1,4 @@
-package util;
+package lqm.di.util;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -7,9 +7,10 @@ import java.util.Date;
 
 public class Util {
 
-    public static Date fechas(String str){
+/*
+    public static String fechas(String str){
 
-        Date date = new Date();
+        String date = new Date();
         DateFormat format= new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
         try {
             str=str.replaceAll("/","-");
@@ -27,6 +28,7 @@ public class Util {
         return date;
 
     }
+*/
 
 
 }

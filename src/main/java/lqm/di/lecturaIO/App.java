@@ -1,12 +1,12 @@
-package lqm.di;
+package lqm.di.lecturaIO;
 //Realizaremos el primer ejercicio de Acesso a datos, con datos reales de un dia en concreto de accidentes
 //Debemos empezar procesando un csv
 
+import lqm.di.ConsultasAccidentes;
 import lqm.di.model.AccidentesLeganes;
-import service.ServicioAccidentes;
+import lqm.di.service.ServicioAccidentes;
 
 import java.util.List;
-import java.util.stream.Stream;
 
 public class App {
 
@@ -16,8 +16,9 @@ public class App {
 
         List<AccidentesLeganes> accidentes = service.lecturaAccidentes("data/accidentesmadrid.csv");
 
-        System.out.println("LISTAMOS TODOS LOS ACCIDENTES");
+        ConsultasAccidentes consultasAccidentes = new ConsultasAccidentes();
+/*        System.out.println("LISTAMOS TODOS LOS ACCIDENTES");
 
-        System.out.println(accidentes.toString());
+        System.out.println(accidentes.toString());*/
     }
 }

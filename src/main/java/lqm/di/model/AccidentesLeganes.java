@@ -1,17 +1,13 @@
 package lqm.di.model;
 
-import util.Util;
-
-import java.util.Date;
-
 public class AccidentesLeganes {
 
-    private String num_Expediente;
-    private Date fecha;
-    private Date hora;
+    private String numExpediente;
+    private String fecha;
+    private String hora;
     private String localizacion;
-    private int numero;
-    private int codDistrito;
+    private String numero;
+    private String codDistrito;
     private String distrito;
     private String tipoAccidente;
     private String estadoMetereologico;
@@ -26,16 +22,17 @@ public class AccidentesLeganes {
     private boolean positivaDrogas;
     private boolean positivaAlcohol;
 
-    public AccidentesLeganes(){}
+    public AccidentesLeganes() {
+    }
 
     public AccidentesLeganes(String[] campos){
 
-        this.num_Expediente= campos[0];
-        this.fecha= Util.fechas(campos[1]);
-        this.hora= Util.fechas(campos[2]);
+        this.numExpediente = campos[0];
+        this.fecha= campos[1];
+        this.hora= campos[2];
         this.localizacion=campos[3];
-        this.numero= Integer.parseInt(campos[4]);
-        this.codDistrito= Integer.parseInt(campos[5]);
+        this.numero= campos[4];
+        this.codDistrito= campos[5];
         this.distrito=campos[6];
         this.tipoAccidente= campos[7];
         this.estadoMetereologico= campos[8];
@@ -52,27 +49,49 @@ public class AccidentesLeganes {
 
     }
 
-    public String getNum_Expediente() {
-        return num_Expediente;
+    public AccidentesLeganes(String numExpediente, String fecha, String hora, String localizacion, String numero, String codDistrito, String distrito, String tipoAccidente, String estadoMetereologico, String tipoVehiculo, String tipoPersona, String rangoEdad, String sexo, String codLexividad, String lexividad, double coordenadaX, double coordenadaY, boolean positivaDrogas, boolean positivaAlcohol) {
+        this.numExpediente = numExpediente;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.localizacion = localizacion;
+        this.numero = numero;
+        this.codDistrito = codDistrito;
+        this.distrito = distrito;
+        this.tipoAccidente = tipoAccidente;
+        this.estadoMetereologico = estadoMetereologico;
+        this.tipoVehiculo = tipoVehiculo;
+        this.tipoPersona = tipoPersona;
+        this.rangoEdad = rangoEdad;
+        this.sexo = sexo;
+        this.codLexividad = codLexividad;
+        this.lexividad = lexividad;
+        this.coordenadaX = coordenadaX;
+        this.coordenadaY = coordenadaY;
+        this.positivaDrogas = positivaDrogas;
+        this.positivaAlcohol = positivaAlcohol;
     }
 
-    public void setNum_Expediente(String num_Expediente) {
-        this.num_Expediente = num_Expediente;
+    public String getNumExpediente() {
+        return numExpediente;
     }
 
-    public Date getFecha() {
+    public void setNumExpediente(String numExpediente) {
+        this.numExpediente = numExpediente;
+    }
+
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
-    public Date getHora() {
+    public String getHora() {
         return hora;
     }
 
-    public void setHora(Date hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
 
@@ -84,19 +103,19 @@ public class AccidentesLeganes {
         this.localizacion = localizacion;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
-    public int getCodDistrito() {
+    public String getCodDistrito() {
         return codDistrito;
     }
 
-    public void setCodDistrito(int codDistrito) {
+    public void setCodDistrito(String codDistrito) {
         this.codDistrito = codDistrito;
     }
 
@@ -207,7 +226,7 @@ public class AccidentesLeganes {
     @Override
     public String toString() {
         return "AccidentesLeganes{" +
-                "num_Expediente=" + num_Expediente +
+                "num_Expediente=" + numExpediente +
                 ", fecha=" + fecha +
                 ", hora=" + hora +
                 ", localizacion='" + localizacion + '\'' +

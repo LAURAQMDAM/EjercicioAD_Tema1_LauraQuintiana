@@ -1,4 +1,4 @@
-package util;
+package lqm.di.util;
 
 import lqm.di.model.AccidentesLeganes;
 import java.io.File;
@@ -25,29 +25,20 @@ public class ListarCSV {
            /* System.out.println("Proceso la linea: " + (i-1));*/
             StringTokenizer tokenizer = new StringTokenizer(lines.get(i), ";");
             AccidentesLeganes accidente = new AccidentesLeganes();
-            accidente.setNum_Expediente(tokenizer.nextToken());
-           /* accidente.setFecha(LocalDate.parse(tokenizer.nextToken(), DateTimeFormatter.ofPattern("d/MM/yyy")));
-            tokenizer.nextToken(); //saltamos la columna quantityPerUnit->columna hora hasta que averiguemos
-           // accidente.setHora(LocalTime.parse(tokenizer.nextToken(), DateTimeFormatter.ofPattern("HH:mmss")));
+            accidente.setNumExpediente(tokenizer.nextToken());
+            accidente.setFecha(tokenizer.nextToken());
+            accidente.setHora(tokenizer.nextToken());
             accidente.setLocalizacion(tokenizer.nextToken());
-            tokenizer.nextToken(); //saltamos la columna quantityPerUnit->columna numero
-            tokenizer.nextToken(); //saltamos la columna quantityPerUnit->columna cod_distrito
+            accidente.setNumero(tokenizer.nextToken());
+            accidente.setCodDistrito(tokenizer.nextToken());
+            accidente.setTipoAccidente(tokenizer.nextToken());
             accidente.setDistrito(tokenizer.nextToken());
-            tokenizer.nextToken(); //saltamos la columna quantityPerUnit->columna tipo_acccidente
-           // tokenizer.nextToken(); //saltamos la columna quantityPerUnit->columna tipo_acccidente si no pongo este me dice qeu voy por estadometerologi
-            accidente.setEstadoMeterologico(tokenizer.nextToken());
+            accidente.setEstadoMetereologico(tokenizer.nextToken());
             accidente.setTipoVehiculo(tokenizer.nextToken());
-            tokenizer.nextToken(); //saltamos la columna quantityPerUnit->columna tipo_persona
-            tokenizer.nextToken(); //saltamos la columna quantityPerUnit->columna rango_Edad
             accidente.setSexo(tokenizer.nextToken());
-            tokenizer.nextToken(); //saltamos la columna quantityPerUnit->columna cod_lesividad
-            tokenizer.nextToken(); //saltamos la columna quantityPerUnit->columna lesividad
-            tokenizer.nextToken(); //saltamos la columna quantityPerUnit->columna coordenada x
-            tokenizer.nextToken(); //saltamos la columna quantityPerUnit->columna coordenada y
             accidente.setPositivaAlcohol(Boolean.parseBoolean(tokenizer.nextToken()));
             accidente.setPositivaDrogas(Boolean.parseBoolean(tokenizer.nextToken()));
-*/
-          //  System.out.println(accidentes.toString());
+
             accidentes.add(accidente);
         }
 

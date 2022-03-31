@@ -1,9 +1,10 @@
 package lqm.di;
 
 import lqm.di.model.AccidentesLeganes;
-import util.ListarCSV;
+import lqm.di.util.ListarCSV;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 public class ConsultasAccidentes {
 
@@ -12,7 +13,7 @@ public class ConsultasAccidentes {
     public ConsultasAccidentes(){
         //cargo la lista de accidentes
         try{
-          /*  System.out.println("hola");*/
+            System.out.println("hola");
          accidentesLega = ListarCSV.getAccidentes();
             procesarStreams();
         }catch (Exception e){
@@ -27,11 +28,11 @@ public class ConsultasAccidentes {
     private void todosAccidentes() {
 
         System.out.println("LISTAMOS TODOS LOS ACCIDENTES");
-     /*   Stream<AccidentesLeganes> acci= accidentesLega.stream(); //flujo de elementos AccidentesLega
-       acci.forEach(System.out::println);
+        Stream<AccidentesLeganes> acci= accidentesLega.stream(); //flujo de elementos AccidentesLega
+        acci.forEach(System.out::println);
 
         System.out.println(accidentesLega.stream().findFirst());
         accidentesLega.stream().limit(5).filter(a -> a.getDistrito()=="Leganes").forEach(System.out::println);
-        System.out.println("");*/
+        System.out.println("");
     }
 }

@@ -1,8 +1,7 @@
-package service;
+package lqm.di.service;
 
 import lqm.di.model.AccidentesLeganes;
-import util.Constantes;
-
+import lqm.di.util.Constantes;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -13,14 +12,14 @@ import java.util.List;
 public class ServicioAccidentes {
 
     public List<AccidentesLeganes> lecturaAccidentes(String rutaArchivo) {
-        List<AccidentesLeganes> accidentes = new ArrayList<AccidentesLeganes>();
+        List<AccidentesLeganes> accidentes = new ArrayList<>();
         BufferedReader bufferLectura = null;
         try {
             bufferLectura = new BufferedReader(new FileReader(rutaArchivo));
             String linea = bufferLectura.readLine();
             int i = 0;
             while (linea != null) {
-                String[] camposAux = new String[25];
+                String[] camposAux = new String[19];
                 String[] campos = linea.split(Constantes.SEPARADOR);
                 for (int h = 0; h < camposAux.length; h++) {
                     if (campos.length > h) {
@@ -30,8 +29,8 @@ public class ServicioAccidentes {
                     }
                 }
 /*                if (i != 0) {
-                    AccidentesLeganes estacionesAux = new AccidentesLeganes(camposAux);
-                    accidentes.add(estacionesAux);
+                    AccidentesLeganes accidentesAux = new AccidentesLeganes(camposAux);
+                    accidentes.add(accidentesAux);
                 }*/
                 linea = bufferLectura.readLine();
                 i++;
